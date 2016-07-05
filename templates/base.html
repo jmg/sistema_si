@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>One Click Login Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link type="text/css" href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link type="text/css" href="{{ STATIC_URL }}bootstrap_admin/css/sb-admin-2.css" rel="stylesheet" >
+
+    <!-- Custom Fonts -->
+    <link type="text/css" href="{{ STATIC_URL }}font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" >
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery-ui-1.11.4/jquery-ui.min.js"></script>
+
+    <!-- ColorPicker -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}bootstrap-colorpicker-master/dist/css/bootstrap-colorpicker.min.css" />
+
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap-colorpicker-master/dist/js/bootstrap-colorpicker.min.js"></script>
+
+    <!-- DataTables CSS -->
+    <link href="{{ STATIC_URL }}bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="{{ STATIC_URL }}bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <link href="{{ STATIC_URL }}jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="{{ STATIC_URL }}alertify/alertify.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}alertify/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}alertify/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}alertify/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}alertify/css/themes/bootstrap.min.css"/>
+
+    <link href="{{STATIC_URL}}/icheck/skins/square/blue.css" rel="stylesheet">
+    <script src="{{STATIC_URL}}/icheck/icheck.js"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/56263f089ddd4c10614d96a3/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <style type="text/css">
+        @media (min-width: 1200px) {
+            .col-lg-25 {
+                width: 20%;
+            }
+        }
+        pre {
+            padding-left: 15px;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .checkbox {
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+        .panel-toggler {
+            cursor: pointer;
+        }
+        .dataTable_wrapper td {
+            vertical-align: middle !important;
+        }
+
+        table td:last-child {
+            width: 1%;
+            white-space: nowrap;
+        }
+
+        .pricingTables .i .c .head {
+            background: #31c685;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 16px 0 14px 0;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .pricingTables .i .c .price {
+            font-size: 75px;
+            font-size: 7.5rem;
+            color: #36373c;
+            font-weight: 700;
+            border-bottom: 1px solid #deddde;
+            padding: 5px 0;
+        }
+
+        .pricingTables .i .c .price span {
+            font-size: 18px;
+            font-size: 1.8rem;
+            color: #bfbfbf;
+            margin-left: -38px;
+        }
+
+        .pricingTables .i {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pricingTables .i .c {
+            border: 1px solid #deddde;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            -webkit-box-shadow: 0 5px 0 #deddde;
+            -moz-box-shadow: 0 5px 0 #deddde;
+            box-shadow: 0 5px 0 #deddde;
+        }
+
+        .pricingTables .i .c .info {
+            line-height: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid #deddde;
+        }
+
+
+        .pricingTables .i .c .btnWrap {
+            padding: 30px;
+        }
+
+        .pricingTables .i .c .price sup {
+            font-size: 40px;
+            font-size: 4rem;
+            top: -25px;
+        }
+
+        .ui-slider-handle {
+            cursor: pointer;
+        }
+        .ui-slider {
+            cursor: pointer;
+        }
+
+        .nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+            background: #eee;
+        }
+
+        .nav-tabs>li.special>a, .nav-tabs>li.special>a:focus, .nav-tabs>li.special>a:hover {
+            background: #7BB1CB;
+            color: #FFF;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        /*$(document).ready(function() {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square_blue',
+            });
+        });*/
+        function showUpgradeModal(callback) {
+            $("#upgrade-plan-modal").modal("show");
+            if (callback) callback();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        {% block bar %}
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" style="font-size: 29px"><i class="fa fa-user fa-fw"></i> Fundacion Si!</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-nav navbar-top-links navbar-right">
+                <li> <a href="#" onclick="location.href='/'"><i class="fa fa-home fa-fw"></i> Admin </a> </li>
+                <li> <a href="#" onclick="location.href='/support'"><i class="fa fa-file-text-o fa-fw"></i> Support </a> </li>
+                <li> <a href="#" onclick="location.href='/index/logout'"><i class="fa fa-sign-out fa-fw"></i> Logout </a> </li>
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <!-- /.navbar-static-side -->
+        </nav>
+        {% endblock %}
+
+        <div class="msgs-container general"></div>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            {% block content %}{% endblock %}
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap_admin.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap_admin/js/sb-admin-2.js"></script>
+
+    <!-- Datatables -->
+    <script type="text/javascript" src="{{ STATIC_URL }}DataTables-1.10.9/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}DataTables-1.10.9/js/dataTables.bootstrap.min.js"></script>
+
+    {% block js %}{% endblock %}
+
+    <div class="modal fade" id="upgrade-plan-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <b>Upgrade your plan to get these features.</b>
+                </div>
+                <div class="modal-body">
+
+                    <div class="pricingTables">
+                        <div class="container">
+                            <div class="col-xs-12 i" style="width: 48%">
+                                <div class="c">
+                                    <div class="head">Pro Plan</div>
+                                    <div class="price">
+                                        9.99 <sup>$</sup> <span>/ month</span>
+                                    </div>
+                                    <div class="info">
+                                        <ul style="line-height: 32px; padding: 0; text-align: left; margin-left: 46px;">
+                                        <li>Make the login and signup classy: <b>Enable the login/signup popup!</b></li>
+                                        <li>See users profile on: <b>Facebook</b>, <b>Twitter</b>, <b>Google+</b> and <b>Instagram</b></li>
+                                        <li>Get personalized support from the One Click Social Login team</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/index/billing?plan_name=pro" type="button" class="btn btn-primary">Upgrade Plan</a>
+                    <a class="btn btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

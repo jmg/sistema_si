@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Personas del sistema</h1>
+
+<table class="table table-striped table-bordered table-hover">
+<tr>
+    <td>Nombre</td>
+    <td>Apellido</td>
+    <td>DNI</td>
+    <td>Fecha de nacimiento</td>
+</tr>
+{% for persona in personas %}
+<tr>
+    <td>{{persona.nombre}}</td>
+    <td>{{persona.apellido}}</td>
+    <td>{{persona.dni}}</td>
+    <td>{{persona.fecha_de_nacimiento}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<hr>
+
+<div class="col-md-4">
+
+<h1>Cargar Persona</h1>
+
+<hr>
+
+<form method="POST" action="/persona/guardar/">
+
+    <div class="form-group">
+        <label>Nombre</label><input type="text" name="nombre" class="select form-control">
+    </div>
+
+    <div class="form-group">
+    <label>Apellido</label><input type="text" name="apellido" class="select form-control">
+    </div>
+
+    <div class="form-group">
+    <label>Dni</label><input type="text" name="dni" class="select form-control">
+    </div>
+
+    <div class="form-group">
+    <label>Fecha de nacimiento</label><input type="date" name="fecha_de_nacimiento" class="select form-control">
+    </div>
+
+    <input type="submit" value="Guardar" class="btn btn-primary">
+</form>
+</div>
+
+{% endblock %}
